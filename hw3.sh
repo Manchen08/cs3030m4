@@ -58,5 +58,9 @@ if [[ -z $inFile ]]
 	help
 fi
 
+echo "Your output file will be saved in the 20CenturyPresidents.txt file"
+
+sed -f $sedFile $inFile | awk -f $awkFile > 20CenturyPresidents.txt
+
 exit 0
 
