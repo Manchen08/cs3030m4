@@ -17,7 +17,7 @@
 
 help()
 {
-	echo "Usage"
+	echo "Usage ./hw3.sh -s sedsrc -a awksrc -i inputFile"
 	exit 1;
 }
 
@@ -26,7 +26,7 @@ then
 	help
 fi
 
-while getops ":s:a:i:" opt
+while getopts ":s:a:i:" opt
 do
 	case $opt in
 		s) sedFile=$OPTARG
@@ -54,6 +54,7 @@ then
 fi
 
 if [[ -z $inFile ]]
+then
 	echo "inFile is missing"
 	help
 fi
